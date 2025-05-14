@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManageEngine Endpoint Central</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+             font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
+        }
+        
+        body {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+    .header-banner {
+  padding: 20px 0;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.logo {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+.right-logo {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+        
+        .endpoint-logo {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .banner {
+            background-color: #0a0e2a;
+            color: white;
+            padding: 60px 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><path d="M0,200 Q200,150 400,200 T800,200" stroke="%23152052" stroke-width="1" fill="none" opacity="0.2" /><path d="M0,250 Q200,200 400,250 T800,250" stroke="%23152052" stroke-width="1" fill="none" opacity="0.2" /><path d="M0,300 Q200,250 400,300 T800,300" stroke="%23152052" stroke-width="1" fill="none" opacity="0.2" /></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .banner h1 {
+            font-size: 2.5rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        
+        .main-content {
+            display: flex;
+            padding: 40px 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        
+        /* Form Styles */
+        .form-container {
+            background-color: #f0f4ff;
+            border-radius: 8px;
+            width: 100%;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-header {
+            margin-bottom: 20px;
+        }
+        
+        .form-header h2 {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #14285f;
+        }
+        
+        .footer-link {
+            color: #1e3a8a;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .banner h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .banner {
+                padding: 40px 0;
+            }
+            
+            .banner h1 {
+                font-size: 1.7rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .form-container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+    <div class="header-banner">
+  <div class="logo-container">
+    <img src="https://bussinessscale.com/bussinessscales_logo.png" alt="Left Logo" class="logo" />
+    <img src="https://bussinessscale.com/manage_engine/images/logonew.png" alt="Right Logo" class="logo right-logo" />
+  </div>
+</div>
+    
+   <div style="background-image: url(https://bussinessscale.com/manage_engine/images/bgtxlp.jpg);background-repeat: no-repeat;background-size: cover;background-position: center;width: 100%;">
+            <div style="padding: 40px;border-bottom: 1px solid rgb(126, 126, 126);">
+               <h1 style="color:rgb(255, 255, 255);text-align: center;font-family: sans-serif;padding: 2%;">Your Go-To Resource for Cybersecurity &amp; Endpoint Management Strategies</h1>
+              
+     
+              
+ 
+            </div>
+         </div>
+    
+    <div class="container main-content">
+        <div class="content">
+            <h2>Strengthening IT Operations with Unified Endpoint Management</h2>
+            
+            <p>As businesses face economic uncertainty, optimizing costs while ensuring security and efficiency is critical. ManageEngine's <span class="highlight">"Why Endpoint Management is the Best Defense Against a Recession"</span> highlights how <span class="highlight">Unified Endpoint Management (UEM)</span> helps organizations streamline operations, reduce expenses, and maximize productivity.</p>
+            
+            <h3>Challenges During a Recession</h3>
+            
+            <ul>
+                <li><strong>Budget Constraints:</strong> IT teams must achieve more with fewer resources.</li>
+                <li><strong>Cost Optimization:</strong> Eliminates redundant tools, automates patching, and reduces bandwidth usage.</li>
+                <li><strong>Time Savings:</strong> Enables remote troubleshooting, self-healing endpoints, and automated software deployment.</li>
+                <li><strong>Workforce Efficiency:</strong> Self-service portals and remote device management minimize IT workload.</li>
+            </ul>
+            
+            <h3>Why Choose ManageEngine Endpoint Central?</h3>
+            
+            <p>With <strong>20+ years of experience</strong>, Endpoint Central:</p>
+            
+            <ul>
+                <li><strong>Reduces IT costs</strong> by consolidating security and management solutions.</li>
+                <li><strong>Enhances security</strong> through automation and compliance enforcement.</li>
+                <li><strong>Improves efficiency</strong>, helping businesses remain resilient in economic downturns.</li>
+            </ul>
+            
+            <p>Investing in UEM ensures businesses stay competitive while navigating financial challenges.</p>
+        </div>
+        
+        <div class="sidebar">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Request Information</h2>
+                    
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name*</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company-size">Company Size*</label>
+                        <select id="company-size" name="company-size" required>
+                            <option value="" disabled selected>Select company size</option>
+                            <option value="1-50">1-50 employees</option>
+                            <option value="51-200">51-200 employees</option>
+                            <option value="201-500">201-500 employees</option>
+                            <option value="501-1000">501-1000 employees</option>
+                            <option value="1000+">1000+ employees</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Questions or Comments</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 Businessscale</p>
+            <p>If you would like to change your communication preferences <a href="#" class="footer-link">click here</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
