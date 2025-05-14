@@ -301,7 +301,7 @@
                     <h2>Request Information</h2>
                     
                 </div>
-                <form>
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Full Name*</label>
                         <input type="text" id="name" name="name" required>
@@ -346,5 +346,22 @@
             <p>If you would like to change your communication preferences <a href="#" class="footer-link">click here</a>.</p>
         </div>
     </footer>
+
+
+    <script>
+  document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default submission
+
+    // Optionally process the form data here (e.g., send to server)
+
+    // Reset the form
+    this.reset();
+
+    // Redirect after a short delay (optional, e.g., to show a success message)
+    setTimeout(() => {
+      window.location.href = "thank.html";
+    }, 500); // 0.5 second delay
+  });
+</script>
 </body>
 </html>
